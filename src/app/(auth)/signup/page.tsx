@@ -18,14 +18,13 @@ export default function SignupPage() {
       options: { data: { full_name: fullName } }
     });
     if (error) return setErr(error.message);
-    alert('Cek email buat verifikasi ya 👀');
     r.push('/login');
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <form onSubmit={onSubmit} className="w-full max-w-sm space-y-4 border p-6 rounded-lg">
-        <h1 className="text-xl font-semibold">Daftar Managein</h1>
+        <h1 className="text-xl font-semibold">Daftar Management</h1>
         <input className="w-full border rounded p-2" placeholder="Nama lengkap"
           value={fullName} onChange={e=>setFullName(e.target.value)} />
         <input className="w-full border rounded p-2" placeholder="Email"
