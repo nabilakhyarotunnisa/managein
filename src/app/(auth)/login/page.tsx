@@ -23,9 +23,11 @@ export default function LoginPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ event: 'SIGNED_IN', session: sess.session }),
       });
+      toast.success('Login berhasil! Selamat datang kembali.');
       r.push('/dashboard');
+      
     } catch (e: any) {
-      toast.error(e?.message ?? 'Login gagal. Periksa kembali email dan password Anda.');
+      toast.error('Login gagal. Periksa kembali email dan password Anda.');
     } finally {
       setLoading(false);
     }
