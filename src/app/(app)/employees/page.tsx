@@ -23,9 +23,11 @@ export default function EmployeesPage() {
   const [sort, setSort] = useState<{col: 'full_name'|'email'|'created_at'; dir: 'asc'|'desc'}>({ col: 'full_name', dir: 'asc' });
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState('');
-
   const from = (page-1) * PAGE_SIZE;
   const to = from + PAGE_SIZE - 1;
+  const exportBase = `/api/employees/export?q=${encodeURIComponent(q)}&sort=${sort.col}&dir=${sort.dir}`;
+  const exportCsv  = `${exportBase}&format=csv`;
+  const exportXlsx = `${exportBase}&format=xlsx`;
 
   const load = async () => {
     setLoading(true); setErr('');
@@ -78,8 +80,12 @@ export default function EmployeesPage() {
           <h1 className="text-2xl font-semibold">Karyawan</h1>
         </div>
         <div className="flex gap-2">
+        
+          <a href={exportCsv} className="rounded-md border px-4 py-2 text-sm">Export CSV</a>
+          <a href={exportXlsx} className="rounded-md border px-4 py-2 text-sm">Export Excel</a>
+
+          <Link href="/employees/import" className="rounded-md border px-4 py-2 text-sm">Import CSV/XLSX</Link>
           <Link href="/employees/new" className="rounded-md bg-blue-600 text-white px-4 py-2 text-sm">Tambah</Link>
-          <Link href="/employees/import" className="rounded-md border px-4 py-2 text-sm">Impor CSV</Link>
         </div>
       </div>
 

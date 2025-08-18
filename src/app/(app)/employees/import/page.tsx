@@ -67,8 +67,8 @@ export default function ImportEmployeesPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <div className="text-sm text-gray-500">Karyawan / Impor</div>
-          <h1 className="text-2xl font-semibold">Impor Karyawan</h1>
+          <div className="text-sm text-gray-500">Karyawan / Import</div>
+          <h1 className="text-2xl font-semibold">Import Karyawan</h1>
           <p className="mt-1 text-sm text-gray-600">
             Format kolom: <code>full_name, email, nik, employment_status, is_active</code>
           </p>

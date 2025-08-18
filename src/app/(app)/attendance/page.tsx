@@ -198,8 +198,6 @@ export default function AttendancePage() {
           </section>
         </div>
       )}
-
-      {/* — Riwayat 7 hari bakal kita tampilkan di bawah section ini — */}
     </main>
   );
 }
